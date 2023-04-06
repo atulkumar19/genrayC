@@ -1,0 +1,195 @@
+&genr
+    mnemonic = 'Pizzo_test_1'
+    rayop = 'netcdf'
+    dielectric_op = 'enabled'
+    r0x = 1.0
+    b0 = 1.0
+    outdat = 'zrn.dat'
+    stat = 'new'
+    ixyz = 1
+/
+&tokamak
+    eqdskin = 'eqdsk'
+    eqdsktype = 'mirror'
+    indexrho = 4
+    ipsi = 1
+    ionetwo = 1
+    ieffic = 3
+    psifactr = 0.999
+    model_b = 0
+    nr = 201
+    nrgrid = 201
+    nzgrid = 1000
+    n_wall = 21
+    r_wall = -0.1, -0.1, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.1, -0.1, 0.1, 0.1, 
+             0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.1, 0.1, -0.1
+    z_wall = -6.0, -5.8, -4.5, -0.2, -0.2, 0.2, 0.2, 4.5, 5.8, 6.0, 6.0, 5.8, 4.5, 
+             0.2, 0.2, -0.2, -0.2, -4.5, -5.8, -6.0, -6.0
+    h_add_wall = 0.1
+/
+&wave
+    frqncy=110.0d+9     !test case in GHz
+    ioxm = -1   !1=O mode, -1=X mode
+    ioxm_n_npar = 0
+    ireflm = 1
+    jwave = 1
+    istart = 1     !uses ech cone, not grill
+    delpwrmn = 0.001
+    ibw = 0
+    i_vgr_ini = 1
+    poldist_mx = 100000.0
+    rho_reflect = 1.0
+    no_reflection = 1
+/
+&scatnper
+/
+&dispers
+    ib = 1
+    id = 2    !follow DIIID example 
+    iherm = 1
+    iabsorp = 1  !follow DIIID example 
+    iswitch = 0
+    idswitch = 2
+    iabswitch = 1
+    n_relt_harm=5   !these 2 lines added 
+    n_relt_intgr=50  ! after successful? run 11:39 6/19/19
+    iflux = 2     !previously was 1, probably doesn't matter 
+    i_im_nperp = 1     !was 2, probably doesn't matter.  
+    i_geom_optic = 1
+    ray_direction = 1.0
+/
+&numercl
+    irkmeth = 2
+    ndim1 = 6
+    isolv = 1
+    idif = 1     !was 1 
+    nrelt = 3000    !was 10000
+    prmt1 = 0.0
+    prmt2 = 999900.0
+    prmt3 = 1.00d-4
+    prmt4 = 5.00d-4   !was 1.00e-5
+    prmt6 = 1.0d-3    !was 0.0025
+    icorrect = 1  !was 0, might matter... 
+    maxsteps_rk = 10000
+    i_uh_switch = 1
+    uh_switch = 1.5
+    prmt6_uh_switch = 0.0001
+    toll_hamilt = 0.1
+/
+&output
+    iwcntr = 0
+    iwopen = 1
+    iwj = 1
+    itools = 0
+    i_save_disp = 0
+    ixscan_save_disp = 300
+    xmin_save_disp = 0.0
+    xmax_save_disp = 0.31
+    y_save_disp = 0.0
+    z_save_disp = 0.0
+    inpar_save_disp = 5
+    inper_save_disp = 100
+    npar_mn_save_disp = 0.0
+    npar_mx_save_disp = 20.0
+    nper_mn_save_disp = 0.001
+    nper_mx_save_disp = 600.0
+/
+&plasma
+    ndens = 41
+    nbulk = 3
+    izeff = 2
+    idens = 0
+    model_rho_dens = 0
+/
+&species
+    charge = 1.0, 1.0, 1.0
+    dmas = 1.0, 3674.0, 3674.0
+/
+&varden
+/
+&denprof
+    dense0 = 0.1d+19, 0.1d+19, 0.1d+18
+    denseb = 0.1d+19, 0.1d+19, 0.1d+18
+    rn1de = 2.0, 2.0, 2.0
+    rn2de = 0.1, 0.1, 0.1
+    zbegin_den_dropoff = 0.0, 
+    zlength_den_dropoff = 0.0, 
+/
+&tpopprof
+    tp0 = 1.0, 1.0, 1.0
+    tpb = 1.0, 1.0, 1.0
+    rn1tp = 2.0, 2.0, 2.0
+    rn2tp = 1.0, 1.0, 1.0
+/
+&vflprof
+/
+&zprof
+    zeff0 = 1.5
+    zeffb = 1.5
+    rn1zeff = 2.0
+    rn2zeff = 1.0
+/
+&tprof
+    ate0 = 50.0d-3, 15.0, 15.0
+    ateb = 50.0d-3, 9.0, 9.0
+    rn1te = 2.0, 2.0, 2.0
+    rn2te = 2.0, 2.0, 2.0
+/
+&grill
+    ilaunch = 1
+    r0launch = 0.08
+    z0launch = 1.50
+    phi0launch = 0.0
+    i_n_poloidal = 1
+    i_rho_cutoff = 0
+    ngrill = 1
+    igrillpw = 1
+    rhopsi0 = 0.91
+    thgrill = 0.0
+    phigrill = 0.0
+    height = 0.01
+    nthin = 1
+    anmin = -2.5
+    anmax = 2.5
+    nnkpar = 10
+    powers = 1000.0
+/
+&eccone
+    raypatt = 'genray'
+    ncone = 1
+    powtot = 1.0d6  !ok
+    zst = 0.782000
+    rst = 0.0600000
+    phist = 0
+    betast = -70.0000
+    alfast = 180
+    alpha1 = 5.00000
+    alpha2 = 0
+    na1 = 1
+    na2 = 10
+/
+&dentab
+/
+&temtab
+/
+&tpoptab
+/
+&vflowtab
+/
+&zeftab
+/
+&read_diskf
+    i_diskf = 0
+/
+&emission
+/
+&ox
+    i_ox = 0
+    theta_bot = 0.0
+    theta_top = 0.0
+    i_ox_poloidal_max = 20
+    eps_antenna = 0.0001
+    eps_xe = 0.05
+/
+&edge_prof_nml
+/

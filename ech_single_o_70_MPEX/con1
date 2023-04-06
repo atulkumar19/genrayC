@@ -1,0 +1,17 @@
+         the data of input file
+  the numbers of points in the r direction:530
+  the numbers of points in the z direction:530
+  the full-width of rectangle: dx=    0.120000 m
+                               dy=    1.750000 m
+  the major radius of the torus:    0.000000 m
+  the major radius of the inner edge
+  of rectangular grid:    0.000000 m
+  the vertical shift up-down symmetry plane:    0.000000 m
+  the major radius of magnetic axis:    0.000000 m
+  the vertical height of magnetic axis:    0.000000 m
+  the poloidal flux function values
+  at the magnetic axis:    0.000000
+  and the last closed flux surface:    0.071945
+  the toroidal magnetic field
+  at major radius of the torus:    0.000000 t
+  the toroidal curent:   0.00000000E+00 a
